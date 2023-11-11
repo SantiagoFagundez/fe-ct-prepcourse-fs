@@ -102,9 +102,7 @@ function esEntero(num) {
    // Ejemplo: (-10) ---> true
    // De lo contrario, retorna false.
    // Tu código:
-   //if(Number.isInteger == num || num == 0)
-   if(num % 1 == 0)
-      return true;
+   if(Number.isInteger(num) || num == 0) return true;
    else return false;
 }
 
@@ -145,11 +143,11 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
- //  if(num <= 0 && num === 1) return false;
- //  for(var i = 2 ; i < num ; i = i++){
- //     if(num % i === 0) return false;
- //  }
- //  return true;
+   if(num <= 0 || num === 1) return false; //descartar negativos, el 0 y el 1
+   for(var i = 2 ; i < num ; i++){ 
+      if(num % i === 0) return false;
+   }
+   return true;
 }
 
 function esVerdadero(valor) {
